@@ -12,7 +12,9 @@ const comments = [
   ];
 
 // Use the comments router
-app.use('/comments', comments );
+app.get('/comments', (req, res) => {
+    res.json(comments);
+  } );
 
 // Start the server
 app.listen(3000, () => {
