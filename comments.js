@@ -1,10 +1,13 @@
-// Create a web server using express and router to handle comments
+// Create web server
+
+// Create web server for comment
+// =============================
 
 // Import the express module
 const express = require('express');
 
 // Create a new express application
-const app = express();
+const router = express.Router();
 
 const comments = [
     { id: 1, author: 'John Doe', body: 'Hello, World!' },
@@ -12,11 +15,11 @@ const comments = [
   ];
 
 // Use the comments router
-app.get('/comments', (req, res) => {
+router.get('/', (req, res) => {
     res.json(comments);
   } );
 
 // Start the server
-app.listen(3000, () => {
+router.listen(3000, () => {
   console.log('Server is listening on port 3000');
 });
